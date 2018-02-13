@@ -1,0 +1,30 @@
+<b:if cond='data:view.isPost'>
+    <div class='middleAds middleAds1' id='middleAds1'>
+      <div style='clear:both;'>
+<p>Advertise</p>
+        <!-- Your middle ads1 here -->
+      </div>
+    </div>
+    <div class='middleAds middleAds2' id='middleAds2'>
+     <div style='clear:both;'>
+<p>Advertise</p>
+        <!-- Your middle ads2 here -->
+      </div>
+    </div>
+<div id='tgtPost'><data:post.body/></div>
+<script type='text/javascript'>
+function insertAfter(tbh,tgt) {
+  var prt = tgt.parentNode;
+  if (prt.lastChild == tgt) {prt.appendChild(tbh);}
+  else {prt.insertBefore(tbh,tgt.nextSibling);}}
+  var tgt = document.getElementById(&quot;tgtPost&quot;);
+  var midAd1 = document.getElementById(&quot;middleAds1&quot;);
+  var midAd2 = document.getElementById(&quot;middleAds2&quot;);
+  var showAd1 = tgt.getElementsByTagName(&quot;br&quot;);
+  var showAd2 = tgt.getElementsByTagName(&quot;p&gt;&quot;);
+  if (showAd1.length &gt; 0) {insertAfter(midAd1,showAd1[3]);}
+  if (showAd2.length &gt; 0) {insertAfter(midAd1,showAd2[3]);}
+  if (showAd1.length &gt; 0) {insertAfter(midAd2,showAd1[5]);}
+  if (showAd2.length &gt; 0) {insertAfter(midAd2,showAd2[5]);}
+</script>
+</b:if>
